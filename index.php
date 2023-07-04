@@ -80,7 +80,7 @@
 
     <div class="container mt-5">
         <div class="row">
-            <div class="col">
+            <div class="col-12">
                 <table style="width:100%" class="text-center table table-striped table-hover border">
             
                     <thead>
