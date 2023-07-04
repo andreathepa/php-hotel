@@ -49,10 +49,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
     <title>PHP HOTEL</title>
 </head>
 <body>
-    <div class="container">
+    <!-- <div class="container">
         <h1>Hotels List:</h1>
         <div class="row">
             <div class="col-12">
@@ -70,29 +71,51 @@
 
             
         </div>
+    </div> -->
+
+    <header>
+        <div class="container p-3">
+            <div><h1>LIST HOTELS</h1></div>
+    </header>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <table style="width:100%" class="text-center table table-striped table-hover border">
+            
+                    <thead>
+                        <tr class="main-tr">
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Parking</th>
+                            <th>Vote</th>
+                            <th>Distance to center</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <?php foreach($hotels as $hotel) { ?>
+                        <tr>
+                            
+    
+                            <td><p><?php echo $hotel['name'] ?></p></td>
+                            <td><p><?php echo $hotel['description'] ?></p></td>
+                            <td><p><?php echo $hotel['parking'] ?></p></td>
+                            <td><p><?php echo $hotel['vote'] ?></p></td>
+                            <td><p><?php echo $hotel['distance_to_center'] ?></p></td>
+    
+                            
+                        </tr>
+                        <?php } ?>
+                        
+
+                    </tbody>
+            
+                </table>
+
+            </div>
+        </div>
     </div>
 
-    <table style="width:100%">
-
-        <?php foreach($hotels as $hotel) { ?>
-
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Parking</th>
-            <th>Vote</th>
-            <th>Distance to center</th>
-        </tr>
-        <tr>
-            <td><p><?php echo $hotel['name'] ?></p></td>
-            <td><p><?php echo $hotel['description'] ?></p></td>
-            <td><p><?php echo $hotel['parking'] ?></p></td>
-            <td><p><?php echo $hotel['vote'] ?></p></td>
-            <td><p><?php echo $hotel['distance_to_center'] ?></p></td>
-
-        </tr>
-        <?php } ?>
-
-    </table>
 </body>
 </html>
