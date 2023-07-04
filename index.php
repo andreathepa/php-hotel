@@ -1,5 +1,13 @@
 <?php
 
+    include __DIR__."/partials/template/hotels.php";
+
+    if (isset($GET['parking'])){
+        foreach($hotels as $index => $hotel){
+            echo $hotel['parking'];
+        }
+    }
+
 
 ?>
 
@@ -15,33 +23,34 @@
 </head>
 <body>
 
-    <?php include __DIR__."/partials/template/hotels.php"; ?>
+    
 
 
-    <!-- <div class="container">
-        <h1>Hotels List:</h1>
-        <div class="row">
-            <div class="col-12">
-                <?php foreach($hotels as $hotel) { ?>
-                <h2><?php echo $hotel['name'] ?></h2>
-                <h5><?php echo $hotel['description'] ?></h5>
-                <h5><?php echo $hotel['parking'] ?></h5>
-                <h5><?php echo $hotel['vote'] ?></h5>
-                <h5><?php echo $hotel['distance_to_center'] ?></h5>
-
-
-                <?php } ?>
-            </div>
-
-
-            
-        </div>
-    </div> -->
+    
 
     <header>
         <div class="container p-3">
             <div><h1>LIST HOTELS</h1></div>
     </header>
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-5">
+                <form action="index.php" method="GET">
+                    <label class="control-label">Parcheggio</label>
+                    <select name="parking" class="form-control">
+                        <option value="">Seleziona hotel con parcheggio o non</option>
+                        <option value="0">No</option>
+                        <option value="1">Sì</option>
+                    </select>
+                    <div class="mt-2">
+                        <button class="btn btn-primary" type="submit">Invia ricerca</button>
+
+                    </div> 
+                </form>
+            </div>
+        </div>
+    </div>
 
     <div class="container mt-5">
         <div class="row">
